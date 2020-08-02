@@ -61,11 +61,11 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
+  axios: {
+    host: 'localhost',
+    port: 8080,
+    prefix: '/api',
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
