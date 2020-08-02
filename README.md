@@ -31,6 +31,15 @@ docker-compose build
 docker-compose run backend rails db:create
 ```
 
+### Authentication
+
+```bash
+docker-compose run backend bash
+> rails g devise:install
+> rails g devise user
+> rails db:migrate
+```
+
 ## Usage
 
 ```bash
