@@ -23,7 +23,7 @@ services:
     command: yarn start
     restart: always
     volumes:
-      - ./frontend:/app
+      - ./frontend:/src
     ports:
       - "3000:3000"
     depends_on:
