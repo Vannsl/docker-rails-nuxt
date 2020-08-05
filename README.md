@@ -25,13 +25,13 @@ npx create-nuxt-app frontend
 docker-compose build
 ```
 
-### Install packages
+### Install node packages
 
 ```bash
 docker-compose run frontend yarn
 ```
 
-### Create Database
+### Create database
 
 ```bash
 docker-compose run backend bash
@@ -50,14 +50,21 @@ docker-compose run backend bash
 
 ## Usage
 
-To work on the frontend locally, we need to start the dev server to enable HMR.
-Therefore we start the backend and the frontend separately:
-
 ```bash
-docker-compose up -d backend
-docker-compose run frontend yarn dev
+docker-compose up -d
 ```
 
-Backend env: [localhost:8080](http://localhost:8080)
+The rails application runs on [localhost:8080](http://localhost:8080) and the frontend application on  [localhost:3000](http://localhost:3000).
 
-Frontend env: [localhost:3000](http://localhost:3000)
+### Frontend Development Mode
+
+To enable HMR for the frontend, the node server should be started with `yarn dev`. To do this, add in the `docker-compose.override.yml` the following service:
+
+```bash
+  frontend:
+    volumes:
+      - ./frontend:/app
+    command: yarn dev
+```
+
+That means that your local directory is mounted and you might need to install the packages for local development as described in Setup > Install node packages.

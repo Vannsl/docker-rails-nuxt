@@ -1,9 +1,10 @@
 <template>
   <section class="section">
     <div class="columns is-mobile">
+    Test
       <ul>
         <li v-for="example in examples" :key="example.name">
-          {{ example.name }} by {{ example.curated_by }}
+          <strong>{{ example.name }}</strong> by {{ example.curated_by }}
         </li>
       </ul>
     </div>
