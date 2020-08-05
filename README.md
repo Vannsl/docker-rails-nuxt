@@ -61,6 +61,8 @@ The rails application runs on [localhost:8080](http://localhost:8080) and the fr
 To enable HMR for the frontend, the node server should be started with `yarn dev`. To do this, add in the `docker-compose.override.yml` the following service:
 
 ```bash
+version: '3'
+services:
   frontend:
     volumes:
       - ./frontend:/app
