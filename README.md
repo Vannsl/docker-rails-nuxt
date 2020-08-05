@@ -25,7 +25,9 @@ npx create-nuxt-app frontend
 docker-compose build
 ```
 
-### Install node packages
+### Install node packages (optional)
+
+If you want to start the node server in development, you need to install the node_modules.
 
 ```bash
 docker-compose run frontend yarn
